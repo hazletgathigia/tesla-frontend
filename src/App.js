@@ -1,10 +1,10 @@
 import "./App.css";
-import GraphsContainer from "./Graphs/screens/GraphsContainer";
+import Screens from "./_router/Screens";
 
 function App() {
     return (
         <div className="App">
-            <GraphsContainer />
+            <Screens />
         </div>
     );
 }
