@@ -4,6 +4,7 @@ import { Button, Form, FormGroup, FormText, Input, Label } from "reactstrap";
 const DataCollectionForm = ({ handleSubmit }) => {
     const [vehicleModel, setVehicleModel] = useState("Model 3");
     const [rawFile, setRawFile] = useState(undefined);
+    const [resetFileKey, setResetFileKey] = useState(undefined);
 
     return (
         <Form>
@@ -26,12 +27,13 @@ const DataCollectionForm = ({ handleSubmit }) => {
                     type="file"
                     id="rawFile"
                     name="rawFile"
-                    //value={rawFile}
+                    key={resetFileKey}
                     onChange={(e) => setRawFile(e.target.files[0])}
                 />
                 <FormText>Click here to select and upload the raw data files</FormText>
             </FormGroup>
-            <Button onClick={() => submit()}>Submit</Button>
+            <Button onClick={() => resetFile()}>Reset File</Button>
+            <Button onClick={() => submit()}>Process File</Button>
         </Form>
     );
 
@@ -44,6 +46,11 @@ const DataCollectionForm = ({ handleSubmit }) => {
         }
 
         handleSubmit(data);
+    }
+
+    function resetFile() {
+        setResetFileKey(Date.now());
+        setRawFile(undefined);
     }
 };
 

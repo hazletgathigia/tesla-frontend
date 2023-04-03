@@ -1,10 +1,16 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import BarGraphB from "../components/BarGraphComponentB";
 
 const GraphsScreen = () => {
     const { idData } = useSelector((state) => state.data);
 
-    return <>{idData && <BarGraphB data={processRawData(idData)} />}</>;
+    return (
+        <>
+            <Link to="/">Home</Link>
+            {idData && <BarGraphB data={processRawData(idData)} />}
+        </>
+    );
 
     function processRawData(rawData) {
         return rawData.map((rawId) => {
