@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import BarGraphB from "../components/BarGraphComponentB";
+import BarGraph from "../components/BarGraph";
 
 const GraphsScreen = () => {
     const { idData } = useSelector((state) => state.data);
@@ -8,7 +8,7 @@ const GraphsScreen = () => {
     return (
         <>
             <Link to="/">Home</Link>
-            {idData && <BarGraphB data={processRawData(idData)} />}
+            {idData && <BarGraph data={processRawData(idData)} />}
         </>
     );
 
