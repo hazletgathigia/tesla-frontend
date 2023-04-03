@@ -57,6 +57,8 @@ const sampleData = [
 ];
 
 const BarGraphB = ({ data }) => {
+    console.log(data);
+
     return (
         <BarChart
             width={2700}
