@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button, Form, FormGroup, FormText, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, FormText, Input, InputGroup, Label } from "reactstrap";
 
 const DataCollectionForm = ({ handleSubmit }) => {
     const [vehicleModel, setVehicleModel] = useState("Model 3");
     const [rawFile, setRawFile] = useState(undefined);
-    const [resetFileKey, setResetFileKey] = useState(undefined);
+    const [fileKey, setFileKey] = useState(undefined);
 
     return (
         <Form>
@@ -23,16 +23,19 @@ const DataCollectionForm = ({ handleSubmit }) => {
             </FormGroup>
             <FormGroup>
                 <Label for="rawFile">Raw CAN Data File</Label>
-                <Input
-                    type="file"
-                    id="rawFile"
-                    name="rawFile"
-                    key={resetFileKey}
-                    onChange={(e) => setRawFile(e.target.files[0])}
-                />
+                <InputGroup>
+                    <Input
+                        type="file"
+                        id="rawFile"
+                        name="rawFile"
+                        key={fileKey}
+                        onChange={(e) => setRawFile(e.target.files[0])}
+                    />
+                    <Button onClick={() => resetFile()}>Reset File</Button>
+                </InputGroup>
                 <FormText>Click here to select and upload the raw data files</FormText>
             </FormGroup>
-            <Button onClick={() => resetFile()}>Reset File</Button>
+            {/* <Button onClick={() => resetFile()}>Reset File</Button> */}
             <Button onClick={() => submit()}>Process File</Button>
         </Form>
     );
@@ -49,7 +52,7 @@ const DataCollectionForm = ({ handleSubmit }) => {
     }
 
     function resetFile() {
-        setResetFileKey(Date.now());
+        setFileKey(Date.now());
         setRawFile(undefined);
     }
 };
