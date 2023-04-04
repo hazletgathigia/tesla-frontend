@@ -20,7 +20,7 @@ const dataSlice = createSlice({
             })
             .addCase(fetchIdData.rejected, (state, action) => {
                 state.loading = false;
-                state.errorMessage = action.payload;
+                state.errorMessage = action.error.message;
             });
     },
 });
