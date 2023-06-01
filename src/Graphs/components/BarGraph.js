@@ -20,7 +20,7 @@ const BarGraph = ({ data }) => {
             <YAxis label={{ value: "Transmissions", angle: -90, position: "insideLeft" }} />
             <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} />
             <Legend verticalAlign="top" height={36} />
-            <Bar dataKey="y" name="Total Transmissions" fill="#8884d8" />
+            <Bar dataKey="y" name="Transmissions per CAN Identifier" fill="#8884d8" />
         </BarChart>
     );
 };
