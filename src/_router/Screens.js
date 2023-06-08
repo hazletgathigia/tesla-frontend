@@ -5,7 +5,7 @@ import HomeScreen from "../Home/screens/HomeScreen";
 const Screens = () => {
     return (
         <Routes>
-            <Route path="/" element={<HomeScreen />} />
+            <Route path="/tesla-frontend" element={<HomeScreen />} />
             <Route path="/graphs" element={<GraphsScreen />} />
         </Routes>
     );

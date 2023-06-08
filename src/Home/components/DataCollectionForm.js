@@ -18,7 +18,8 @@ const DataCollectionForm = ({ handleSubmit }) => {
                     onChange={(e) => setVehicleModel(e.target.value)}
                 >
                     <option value="Model 3">Model 3</option>
-                    <option value="Model 5">Model 5</option>{" "}
+                    <option value="Model 5">Model 5</option>
+                    <option value="Model X">Model X</option>{" "}
                 </Input>
             </FormGroup>
             <FormGroup>
