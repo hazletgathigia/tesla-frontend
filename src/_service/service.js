@@ -1,4 +1,3 @@
-import axios from "axios";
 import axiosInstance from "../_helpers/axios";
 
 export { uploadFile };
