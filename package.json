@@ -1,6 +1,6 @@
 {
     "name": "tesla-frontend",
-    "homepage": "http://hazletgathigia.github.io/tesla-frontend",
+    "homepage": "https://hazletgathigia.gitlab.io/tesla-frontend/",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
