@@ -11,18 +11,10 @@ build:
         - CI=false npm run build
     artifacts:
         paths:
-            - build
+            - build/
 
-pages:
+netlify:
     stage: deploy
-    dependencies:
-        - build
     script:
-        - rm -rf public
-        - cp build/index.html build/404.html
-        - mv build public
-    artifacts:
-        paths:
-            - public
-    only:
-        - main
+        - npm install -g netlify-cli
+        - netlify deploy --dir=build --prod
