@@ -1,0 +1,33 @@
+.HomeScreen {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+        ". title ."
+        ". intro ."
+        ". fileform .";
+    place-items: center;
+    /* width: fit-content; */
+    /* justify-content: center; */
+}
+
+.Title {
+    grid-area: title;
+    padding: 1rem;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.IntroCard {
+    grid-area: intro;
+    padding: 1rem;
+    /* margin-left: 15rem;
+    margin-right: 15rem; */
+}
+
+.FileUploadForm {
+    grid-area: fileform;
+    padding-top: 4rem;
+    /* margin-left: 25rem;
+    margin-right: 25rem; */
+}
