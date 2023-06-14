@@ -2,10 +2,10 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import BarGraph from "../components/BarGraph";
 import "./GraphsScreen.css";
-import { Button } from "reactstrap";
+import { Button, Spinner } from "reactstrap";
 
 const GraphsScreen = () => {
-    const { idData } = useSelector((state) => state.data);
+    const { idData, loading } = useSelector((state) => state.data);
     const navigate = useNavigate();
 
     return (
@@ -15,6 +15,11 @@ const GraphsScreen = () => {
                     Process new file
                 </Button>
             </div>
+            {loading && (
+                <div className="Spinner">
+                    <Spinner color="secondary" style={{ height: "10rem", width: "10rem" }} />
+                </div>
+            )}
 
             {idData && <BarGraph data={processRawData(idData)} />}
         </div>
