@@ -1,15 +1,23 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BarGraph from "../components/BarGraph";
+import "./GraphsScreen.css";
+import { Button } from "reactstrap";
 
 const GraphsScreen = () => {
     const { idData } = useSelector((state) => state.data);
+    const navigate = useNavigate();
 
     return (
-        <>
-            <Link to="/">Home</Link>
+        <div className="GraphsScreen">
+            <div className="HomeLink">
+                <Button size="lg" onClick={navigateToHomePage}>
+                    Process new file
+                </Button>
+            </div>
+
             {idData && <BarGraph data={processRawData(idData)} />}
-        </>
+        </div>
     );
 
     function processRawData(rawData) {
@@ -17,6 +25,10 @@ const GraphsScreen = () => {
             let id = JSON.parse(rawId);
             return { x: id.id_hex, y: id.occurrences };
         });
+    }
+
+    function navigateToHomePage() {
+        navigate("/");
     }
 };
 

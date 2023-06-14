@@ -1,0 +1,10 @@
+.GraphsScreen {
+    display: grid;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.HomeLink {
+    display: grid;
+    place-items: start;
+}
