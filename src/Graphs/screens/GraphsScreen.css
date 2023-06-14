@@ -6,5 +6,6 @@
 
 .HomeLink {
     display: grid;
+    padding-left: 5rem;
     place-items: start;
 }

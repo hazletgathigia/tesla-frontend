@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BarGraph from "../components/BarGraph";
 import "./GraphsScreen.css";
 import { Button } from "reactstrap";
