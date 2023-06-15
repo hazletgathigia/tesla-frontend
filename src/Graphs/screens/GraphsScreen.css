@@ -14,3 +14,10 @@
     display: grid;
     place-items: center;
 }
+
+.SummaryTable {
+    display: grid;
+    padding-top: 3rem;
+    padding-left: 5rem;
+    width: 60rem;
+}

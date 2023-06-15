@@ -1,7 +1,15 @@
 import BarGraph from "./BarGraph";
+import Table from "./SummaryTable";
 
 const ResultsDisplay = ({ data }) => {
-    return <BarGraph data={prepareBarGraphData(data)} />;
+    return (
+        <>
+            <BarGraph data={prepareBarGraphData(data)} />
+            <div className="SummaryTable">
+                <Table data={data} responsive />
+            </div>
+        </>
+    );
 
     function prepareBarGraphData(data) {
         return data.map((rawId) => {
