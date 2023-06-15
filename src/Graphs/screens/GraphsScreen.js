@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import BarGraph from "../components/BarGraph";
 import "./GraphsScreen.css";
 import { Button, Spinner } from "reactstrap";
+import ResultsDisplay from "../components/ResultsDisplay";
 
 const GraphsScreen = () => {
-    const { idData, loading } = useSelector((state) => state.data);
+    const { idData, loading, errorMessage } = useSelector((state) => state.data);
     const navigate = useNavigate();
 
     return (
@@ -15,22 +15,18 @@ const GraphsScreen = () => {
                     Process new file
                 </Button>
             </div>
+
             {loading && (
                 <div className="Spinner">
                     <Spinner color="secondary" style={{ height: "10rem", width: "10rem" }} />
                 </div>
             )}
 
-            {idData && <BarGraph data={processRawData(idData)} />}
+            {errorMessage && <h3>{errorMessage}</h3>}
+
+            {idData && <ResultsDisplay data={idData} />}
         </div>
     );
-
-    function processRawData(rawData) {
-        return rawData.map((rawId) => {
-            let id = JSON.parse(rawId);
-            return { x: id.id_hex, y: id.occurrences };
-        });
-    }
 
     function navigateToHomePage() {
         navigate("/");
