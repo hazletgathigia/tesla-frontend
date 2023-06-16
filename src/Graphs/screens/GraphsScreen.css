@@ -15,9 +15,22 @@
     place-items: center;
 }
 
-.SummaryTable {
+.TableAndDownloadLinks {
     display: grid;
+    grid-template-columns: 60rem 40rem;
+    grid-template-areas: "summary-table csv-download-links";
     padding-top: 3rem;
     padding-left: 5rem;
-    width: 60rem;
+}
+
+.SummaryTable {
+    display: grid;
+    grid-area: summary-table;
+}
+
+.CsvDownloadLinks {
+    display: grid;
+    grid-area: csv-download-links;
+    justify-items: center;
+    font-size: x-large;
 }
