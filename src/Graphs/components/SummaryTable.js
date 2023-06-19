@@ -1,4 +1,5 @@
 import { Button, Table } from "reactstrap";
+import PayloadsModal from "./PayloadsModal";
 
 const SummaryTable = ({ data }) => {
     return (
@@ -25,7 +26,9 @@ const SummaryTable = ({ data }) => {
                             <td>{identifier.id_occurrences}</td>
                             <td>{identifier.payload_changes}</td>
                             <td>{totalUniquePayloads}</td>
-                            <td>{totalUniquePayloads === 1 ? uniquePayloads : <Button>View Payloads</Button>}</td>
+                            <td>
+                                {totalUniquePayloads === 1 ? uniquePayloads : <PayloadsModal identifier={identifier} />}
+                            </td>
                         </tr>
                     );
                 })}
