@@ -1,4 +1,4 @@
-import { Button, Table } from "reactstrap";
+import { Table } from "reactstrap";
 import PayloadsModal from "./PayloadsModal";
 
 const SummaryTable = ({ data }) => {

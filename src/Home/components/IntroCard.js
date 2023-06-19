@@ -1,5 +1,3 @@
-import { Card, CardBody, CardTitle } from "reactstrap";
-
 const IntroCard = () => {
     return (
         <>
