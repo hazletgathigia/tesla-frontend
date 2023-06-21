@@ -1,14 +1,14 @@
 import { Table } from "reactstrap";
 import PayloadsModal from "./PayloadsModal";
 
-const SummaryTable = ({ data }) => {
+const SummaryTable = ({ data, getUniquePayloads }) => {
     return (
         <Table bordered striped>
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>ID (hex)</th>
-                    <th>ID Occurrences</th>
+                    <th>CAN ID (hex)</th>
+                    <th>ID Transmissions</th>
                     <th>Payload Changes</th>
                     <th>Total Unique Payloads</th>
                     <th>Payloads</th>
@@ -35,10 +35,6 @@ const SummaryTable = ({ data }) => {
             </tbody>
         </Table>
     );
-
-    function getUniquePayloads(identifier) {
-        return Object.keys(identifier.unique_payloads_and_occurrences);
-    }
 };
 
 export default SummaryTable;
