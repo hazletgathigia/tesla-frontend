@@ -16,7 +16,8 @@ const dataSlice = createSlice({
             })
             .addCase(fetchIdData.fulfilled, (state, action) => {
                 state.loading = false;
-                state.idData = action.payload;
+                state.filename = action.payload.filename;
+                state.idData = action.payload.data;
             })
             .addCase(fetchIdData.rejected, (state, action) => {
                 state.loading = false;

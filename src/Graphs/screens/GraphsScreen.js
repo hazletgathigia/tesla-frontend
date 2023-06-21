@@ -5,7 +5,7 @@ import { Button, Spinner } from "reactstrap";
 import ResultsDisplay from "../components/ResultsDisplay";
 
 const GraphsScreen = () => {
-    const { idData, loading, errorMessage } = useSelector((state) => state.data);
+    const { filename, idData, loading, errorMessage } = useSelector((state) => state.data);
     const navigate = useNavigate();
 
     return (
@@ -24,7 +24,7 @@ const GraphsScreen = () => {
 
             {errorMessage && <h3>{errorMessage}</h3>}
 
-            {idData && <ResultsDisplay data={idData} />}
+            {idData && <ResultsDisplay filename={filename} data={idData} />}
         </div>
     );
 

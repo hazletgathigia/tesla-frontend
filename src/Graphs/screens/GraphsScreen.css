@@ -15,6 +15,13 @@
     place-items: center;
 }
 
+.Filename {
+    display: grid;
+    padding-top: 2rem;
+    padding-left: 5rem;
+    place-items: start;
+}
+
 .TableAndDownloadLinks {
     display: grid;
     grid-template-columns: 60rem 40rem;

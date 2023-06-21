@@ -2,16 +2,18 @@ import { CSVLink } from "react-csv";
 import BarGraph from "./BarGraph";
 import Table from "./SummaryTable";
 
-const ResultsDisplay = ({ data }) => {
+const ResultsDisplay = ({ filename, data }) => {
     return (
         <>
+            <p className="Filename">
+                <strong>Summary for:</strong> {filename}
+            </p>
             <BarGraph data={prepareBarGraphData(data)} />
             <div className="TableAndDownloadLinks">
                 <div className="SummaryTable">
                     <Table data={data} responsive />
                 </div>
                 <div className="CsvDownloadLinks">
-                    <CSVLink data={prepareBarGraphData(data)}>Download Summary Table as CSV file</CSVLink>
                     <CSVLink data={prepareBarGraphData(data)}>Download Summary Table as CSV file</CSVLink>
                 </div>
             </div>
