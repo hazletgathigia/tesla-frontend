@@ -11,7 +11,7 @@ const HomeScreen = () => {
 
     return (
         <div className="HomeScreen">
-            <div className="Title">Ixxat's USB-TO-CAN File Processor</div>
+            <div className="Title">CSV Processor for Ixxat's USB-TO-CAN</div>
             <div className="IntroCard">
                 <IntroCard />
             </div>
