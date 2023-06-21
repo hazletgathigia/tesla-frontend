@@ -14,7 +14,9 @@ const ResultsDisplay = ({ filename, data }) => {
                     <SummaryTable responsive data={data} getUniquePayloads={getUniquePayloads} />
                 </div>
                 <div className="CsvDownloadLinks">
-                    <CSVLink data={parseData(data)}>Download Summary Table as CSV file</CSVLink>
+                    <CSVLink filename={prepareDownloadCSVFilename()} data={parseData(data)} separator=";">
+                        Download Summary Table as CSV file
+                    </CSVLink>
                 </div>
             </div>
         </>
@@ -41,6 +43,10 @@ const ResultsDisplay = ({ filename, data }) => {
 
     function getUniquePayloads(identifier) {
         return Object.keys(identifier.unique_payloads_and_occurrences);
+    }
+
+    function prepareDownloadCSVFilename() {
+        return "Summarised_" + filename;
     }
 };
 
